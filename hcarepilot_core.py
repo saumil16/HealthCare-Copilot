@@ -15,8 +15,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 client = MongoClient(os.getenv('mongo_url'))
-dbName = "medical"
-collectionName = "medicineBook"
+dbName = os.getenv('dbName')
+collectionName = os.getenv('collectionName')
 collection = client[dbName][collectionName]
 embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
 

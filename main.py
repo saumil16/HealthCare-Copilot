@@ -11,4 +11,3 @@ async def root():
 
 # Mount Gradio app on the root path
 app = gr.mount_gradio_app(app, demo, path='/')
-
