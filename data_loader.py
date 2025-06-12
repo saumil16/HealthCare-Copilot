@@ -17,7 +17,7 @@ dbName = os.getenv('dbName')
 collectionName = os.getenv('collectionName')
 collection = client[dbName][collectionName]
 
-doc = DirectoryLoader('./sample',glob="./*.pdf",show_progress=True,loader_cls=PyPDFLoader)
+doc = DirectoryLoader('./dataset',glob="./*.pdf",show_progress=True,loader_cls=PyPDFLoader)
 loader = doc.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size = 1000,chunk_overlap = 50)
 data=text_splitter.split_documents(loader)
